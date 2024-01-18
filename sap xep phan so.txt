@@ -1,0 +1,27 @@
+Viết chương trình nhập vào một dãy các phân số. Sắp xếp theo thứ tự tăng dần và in ra các phân số trên n dòng.
+code
+#include<bits/stdc++.h>
+using namespace std;
+#define nmax 100000
+struct PS{int tu,mau;};
+bool cmp(PS a,PS b)
+{return(a.tu*b.mau<b.tu*a.mau);}
+PS a[nmax+5];
+int main()
+{
+	long long n,ucln;
+	cin>>n;
+	for(int i=1;i<=n;i++)
+        cin>>a[i].tu>>a[i].mau;
+    for(int i=1;i<=n;i++)
+    {
+        ucln=__gcd(a[i].tu,a[i].mau);
+        a[i].tu/=ucln;
+        a[i].mau/=ucln;
+
+    }
+    sort (a+1,a+n+1,cmp);
+    for(int i=1;i<=n;i++)
+        cout<<a[i].tu<<" "<<a[i].mau<<"\n";
+}
+

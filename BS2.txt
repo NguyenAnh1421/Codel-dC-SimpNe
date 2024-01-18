@@ -1,0 +1,28 @@
+#include<bits/stdc++.h>
+using namespace std;
+long long u[1000006],x;
+long long k,n,t;
+int BS(int dau,int cuoi,long long x)
+{
+while(dau<=cuoi)
+{
+    int giua=(dau+cuoi)/2;
+if(u[giua]==x) return giua;
+if(u[giua]>x) cuoi=giua-1;
+else dau=giua+1;
+}
+return dau;
+}
+int main()
+{
+    cin>>n;
+    for(long long i=1;i<=n;i++)
+        u[i]=i*i+1;
+    cin>>t;
+    while (t--)
+    {
+        cin>>x;
+        k=BS(1,n,x);
+        cout<<u[k]<<'\n';
+    }
+}

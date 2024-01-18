@@ -1,0 +1,36 @@
+Có nhiều cách đánh chỉ số cho dãy số. Có tài liệu đánh chỉ số dãy số từ chỉ số 0, cũng có nhiều tài liệu đánh chỉ số dãy số bắt đầu từ 1. 
+Trong bài toán này, chúng ta định nghĩa dãy Fibonacci như sau:
+
+f[1]=f[2]=1 và f[n]=f[n−1]+f[n−2],∀n≥3
+#include <bits/stdc++.h>
+
+using namespace std;
+string f[10009];
+string cong (string a,string b)
+{
+    string c="";
+    while(a.size()<b.size()) a='0'+a;
+    while(a.size()>b.size()) b='0'+b;
+    int n=a.size(),nho=0,cs;
+    for(int i=n-1;i>=0;i--)
+    {
+        int tam=nho+a[i]+b[i]-96;
+        nho=tam/10;
+        cs=tam%10;
+        c=char(cs+48)+c;
+    }
+    if(nho==1) c="1"+c;
+    return c;
+}
+int main()
+{
+   f[1]=f[2]="1";
+   for(int i=3;i<=1000;i++)
+    f[i]=cong (f[i-1],f[i-2]);
+   long long n;
+   while(cin>>n)
+   {
+       cout<<f[n]<<'\n';
+
+   }
+}

@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+struct PS
+{
+    long long tu,mau;
+};
+PS a,t;
+int main()
+{
+    t.tu=1;
+    t.mau=1;
+    while (cin>>a.tu>>a.mau)
+    {
+        t.tu=t.tu*a.tu;
+        t.mau=t.mau*a.mau;
+        long long k=__gcd(t.tu,t.mau);
+        t.tu=t.tu/k;
+        t.mau=t.mau/k;
+    }
+   cout<<t.tu<<" "<<t.mau;
+}

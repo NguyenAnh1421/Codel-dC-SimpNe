@@ -1,0 +1,20 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool nt(long long x)
+{
+    if (x<1)
+        return false;
+    for (int i=1;i<=sqrt(x);i++)
+        if (x%i==0)
+            return true ;
+        return x>1;
+}
+int main()
+{
+int n;
+if (nt(n))
+    cout<<"YES"
+    else
+    cout<<"NO";
+    return 0;
+}

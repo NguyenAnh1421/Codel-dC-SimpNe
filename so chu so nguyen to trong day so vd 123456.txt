@@ -1,0 +1,18 @@
+#include <bits/stdc++.h>
+using namespace std;
+bool check(long long x)
+{
+    for(long long i=2;i*i<=x;i++)
+        if(x%i==0)
+        return false;
+    return x>1;
+}
+int main()
+{
+    int dem=0;
+   string n;
+   cin>>n;
+   for(int u:n)
+    if(check(u - 48)) dem++;
+    cout<<dem;
+}

@@ -1,0 +1,30 @@
+#include <bits/stdc++.h>
+using namespace std;
+typedef long long ll;
+
+ll f[100];
+ll n, mmax;
+
+bool KTNT(long long n) {
+    if (n==3||n==2) return true;
+    if(n%2==0||n%3==0) return false ;
+    for(int i=5;i<=sqrt(n);i=i+6)
+        if(n%i==0||n%(i+2)==0) return false;
+    return n>1;
+}
+
+int main() {
+    ios::sync_with_stdio(0);
+    cin.tie(0);cout.tie(0);
+
+    cin >> n;
+    f[1] = f[2] = 1;
+
+    for (int i = 3;;i++) {
+        f[i] = f[i-1] + f[i-2];
+        if (f[i] > n) break;
+        if (KTNT(f[i])) mmax = f[i];
+    }
+
+    cout << mmax;
+}

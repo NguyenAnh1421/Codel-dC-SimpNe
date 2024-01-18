@@ -1,0 +1,25 @@
+#include<bits/stdc++.h>
+using namespace std; 
+#define nmax 10000007
+bool NT[nmax];
+void sangNT()
+{
+	memset(NT,true,sizeof(NT));
+	NT[0]=false;NT[1]=false;
+	for(int i=2;i<=sqrt(nmax);i++)
+	if(NT[i])
+	for(int j=i*i;j<=nmax;j+=i)
+	NT[j]=false;
+}
+int a[1000007], n,dem=0;
+int main()
+	
+{
+	sangNT();
+	cin>>n;
+	for (int i=1;i<=n;i++)
+	cin>>a[i];
+	for (int i=1;i<=n;i++)
+	if(NT[a[i]]) dem++;
+	cout<<dem;
+}

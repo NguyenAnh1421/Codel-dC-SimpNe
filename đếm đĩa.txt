@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+long long a,b,n,dem=0;
+int main()
+{
+    cin>>n>>a>>b;
+    while(n>0)
+    {
+        dem++;
+        n=n-a;
+        a=a+b;
+    }
+    cout<<dem;
+}

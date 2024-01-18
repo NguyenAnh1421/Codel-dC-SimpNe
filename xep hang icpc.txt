@@ -1,0 +1,26 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+struct doi
+{
+    string td,tt;
+    int ac,pe;
+};
+bool cmp(doi a,doi b)
+{
+    if(a.ac>b.ac) return true;
+    if(a.ac<b.ac) return false;
+    return (a.pe<b.pe) ;
+}
+doi a[105];
+int n;
+int main()
+{
+cin>>n;
+for(int i=1;i<=n;i++)
+    cin>>a[i].td>>a[i].tt>>a[i].ac>>a[i].pe;
+sort(a+1,a+1+n,cmp);
+for(int i=1;i<=n;i++)
+    cout<<a[i].td<<" "<<a[i].tt<<endl;
+
+}

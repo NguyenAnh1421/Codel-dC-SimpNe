@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+string s,t;
+int f[5005][5005],max1=0;
+int main()
+{
+   cin>>s>>t;
+   s=' '+s;t=' '+t;
+   for(int i=1;i<s.size();i++)
+   {
+       for(int j=1;j<t.size();j++)
+       {
+           if(s[i]==t[j])
+            f[i][j]=f[i-1][j-1]+1;
+           else f[i][j]=0;
+           max1=max(max1,f[i][j]);
+
+       }
+   }
+   cout<<max1;
+}

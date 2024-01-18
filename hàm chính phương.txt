@@ -1,0 +1,22 @@
+#include <bits/stdc++.h>
+using namespace std ;
+bool scp(long long x )
+{
+    if (x<1)
+        return false;
+        int i=sqrt(x);
+if (i*i==x)
+    return true;
+return 0;
+
+}
+int main()
+{
+    int a ;
+    cin>>a;
+    if (scp(a))
+        cout<<"YES";
+    else
+        cout<<"NO";
+
+}

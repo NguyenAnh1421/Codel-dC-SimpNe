@@ -1,0 +1,109 @@
+#include <bits/stdc++.h>
+#define nmax 10000000
+#define maxn 1000000
+using namespace std;
+int NT[nmax+5],a,b[maxn+5],k=0,n;
+void sangnt()
+{
+	fill(NT,NT+nmax+1,1);
+	NT[0]=false;
+	NT[1]=false;
+	for(int i=2;i<=sqrt(nmax);i++)
+	if(NT[i])
+	for (int j=i*i;j<=nmax;j+=i)
+	NT[j]=false ;
+
+}
+void khoitao()
+{
+    sangnt();
+    ios::sync_with_stdio(0);
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a;
+        if(NT[a])
+        {
+            k++;
+            b[k]=a;
+        }
+    }
+}
+void solve()
+{
+    if (k==0) {cout<<-1;return ;}
+    sort(b+1,b+k+1);
+    if (k%2==0)
+        for(int i=1;i<=k;i+=2)
+            cout<<b[i]<<" ";
+    else
+        for(int i=2;i<=k;i+=2)
+            cout<<b[i]<<" ";
+    for(int i=k;i>=1;i-=2)
+        cout<<b[i]<<" ";
+}
+int main()
+{
+    khoitao();
+    solve();
+}
+
+
+
+
+*CACH 2*
+
+
+#include <bits/stdc++.h>
+#define nmax 10000000
+#define maxn 1000000
+using namespace std;
+int NT[nmax+5],a,b[maxn+5],k=0,n;
+void sangnt()
+{
+	fill(NT,NT+nmax+1,1);
+	NT[0]=false;
+	NT[1]=false;
+	for(int i=2;i<=sqrt(nmax);i++)
+	if(NT[i])
+	for (int j=i*i;j<=nmax;j+=i)
+	NT[j]=false ;
+
+}
+void khoitao()
+{
+    sangnt();
+    ios::sync_with_stdio(0);
+    cin>>n;
+    for(int i=1;i<=n;i++)
+    {
+        cin>>a;
+        if(NT[a])
+        {
+            k++;
+            b[k]=a;
+        }
+    }
+}
+void solve()
+{
+    if (k==0) {cout<<-1;return ;}
+    sort(b+1,b+k+1);
+    deque<int> kq;
+    while (k>0)
+    {
+        kq.push_back(b[k]);
+        k--;
+        if(k>0)
+        {
+        kq.push_front(b[k]);
+        k--;
+        }
+    }
+    for(auto x:kq) cout<<x<<" " ;
+}
+int main()
+{
+    khoitao();
+    solve();
+}

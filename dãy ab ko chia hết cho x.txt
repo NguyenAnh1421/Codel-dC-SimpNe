@@ -1,0 +1,11 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+long long a,b,x;
+int t,t1,dem=0;
+int main()
+{
+    cin>>a>>b>>x;
+    cout<<(b-a+1)-(b/x-(a-1)/x);
+
+}

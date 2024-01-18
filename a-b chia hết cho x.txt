@@ -1,0 +1,14 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+int a,b,x,s;
+int main()
+{
+ cin>>a>>b>>x;
+ if(a%x==0)
+ {
+     cout<<abs((a/x)-(b/x))+1;
+ }
+else {cout<<abs((a/x)-(b/x));}
+
+}

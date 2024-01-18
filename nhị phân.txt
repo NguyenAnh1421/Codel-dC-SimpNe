@@ -1,0 +1,42 @@
+#include<bits/stdc++.h>
+#define ll long long 
+#define nmax 100000
+using namespace std; 
+ll a[nmax+5];
+int n; 
+void doc()
+{
+	cin>>n;
+	for(int i=1;i<=n;i++)
+    cin>>a[i];
+}
+int timnhiphan(ll x)
+{
+	
+	int dau=1,cuoi=n;
+	while(dau<=cuoi)
+	{
+		int giua=(dau+cuoi)/2;
+		if(a[giua]==x) return true;
+		if(a[giua]>x) cuoi=giua-1; 
+		if(a[giua]<x) dau=giua+1;
+	}
+	return false;
+}
+int main ()
+{
+	doc();
+	sort(a+1,a+1+n);
+	int t; 
+	cin>>t; 
+	while(t--)
+	{
+		ll x; 
+		cin>>x;
+		if (timnhiphan(x)) 
+		cout<<"Y\n";
+		else cout<<"N\n";
+	}
+	
+
+}

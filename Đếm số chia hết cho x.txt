@@ -1,0 +1,18 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int a,b,x,c;
+    cin>>a;
+    cin>>b;
+    cin>>x;
+    {
+        for(int i=a;i<=b;i++)
+        if (i%x==0)
+        c++ ;
+    }
+    cout<<c;
+    return 0;
+}

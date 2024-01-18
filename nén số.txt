@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    char a[11];
+    int s;
+
+
+         cin>>a;
+         s=0;
+         int t= strlen(a) -1;
+         for(int j=0;j<=t;++j)s+=a[j]-48;
+         while(s>=10)
+         {
+           s=s/10+s%10;
+         }
+         cout<<s<<endl;
+    return 0;
+}

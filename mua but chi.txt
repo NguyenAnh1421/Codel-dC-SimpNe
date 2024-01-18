@@ -1,0 +1,12 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+
+int main()
+{
+    long long n,k,p;
+    cin>>n>>k>>p;
+    long long s;
+    s=n/(k+1);
+    cout<<n*p-s*p;
+}

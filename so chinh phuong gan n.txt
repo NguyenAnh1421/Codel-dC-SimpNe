@@ -1,0 +1,31 @@
+#include <bits/stdc++.h>
+
+using namespace std;
+bool cp(long long x)
+{
+    long long k=sqrt(x);
+    return (k*k==x);
+}
+int main()
+{
+   long long n,n1,n2;
+   cin>>n;
+   n1=n;n2=n;
+   if(cp(n)) {cout<<n;return 0;}
+   while (!cp(n1)) n1++;
+   while (!cp(n2)) n2--;
+   if(n1-n>n-n2) cout<<n2;
+   else cout<<n1;
+}
+cach 2
+#include <bits/stdc++.h>
+
+using namespace std;
+int main()
+{
+  long long n;
+  cin>>n;
+  long long k=sqrt(n);
+  if(n-k*k<(k+1)*(k+1)-n) cout<<k*k;
+  else cout<<(k+1)*(k+1);
+}

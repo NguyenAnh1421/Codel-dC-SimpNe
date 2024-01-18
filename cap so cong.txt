@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+    int u1,d,x;
+    cin>>u1>>d>>x;
+    long long k=u1%d;
+    if (x%d==k)
+        cout<<(x-u1%d)/d;
+    else
+        cout<<"-1";
+}

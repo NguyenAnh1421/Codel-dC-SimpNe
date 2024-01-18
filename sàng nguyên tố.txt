@@ -1,0 +1,13 @@
+bool NT[nmax];
+void sangnt()
+{
+	memset(NT,true,sizeof(NT));
+	NT[0]=false;
+	NT[1]=false; 
+	for(int i=2;i<=sqrt(nmax);i++)
+	if(NT[i])
+	for (int j=i*i;j<=nmax;j+=i)
+	NT[j]=false ;
+	
+}
+dung sang nho goi sang

@@ -1,0 +1,32 @@
+#include<bits/stdc++.h>
+using namespace std;
+int logarit(int n)
+{
+if (n==0) return 1;
+    int dem=0;
+    while(n!=0)
+    {
+        dem++;
+      n=n/10;
+    }
+    return dem;
+}
+int tong(int so)
+{
+   int temp,tong=0;
+   temp=so;
+   while(temp!=0)
+   {
+       tong+=temp%10;
+       temp/=10;
+   }
+   return tong;
+}
+int main()
+{
+    int n;
+    cin>>n;
+cout<<logarit(n)<<" ";
+cout<<tong(n);
+
+}

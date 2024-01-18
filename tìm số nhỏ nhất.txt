@@ -1,0 +1,15 @@
+#include <bits/stdc++.h>
+using namespace std;
+#define nmax 100
+long long a[nmax],n,k,snn=1e18;
+int main ()
+{
+    cin>>n;
+    for (int i=1;i<=n;i++)
+        cin>>a[i];
+    for (int i=1;i<=n;i++)
+    if (snn>a[i])
+        snn=a[i];
+        cout<<snn;
+    return 0;
+}

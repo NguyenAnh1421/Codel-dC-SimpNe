@@ -1,0 +1,20 @@
+#include<bits/stdc++.h>
+#define nmax 1000006
+using namespace std;
+long long a[nmax],b[nmax],c[nmax],n,s=-1e18;
+int main()
+{
+cin>>n;
+for(int i;i<=n;i++)
+    cin>>a[i];
+b[1]=a[1];
+ for(int i=2;i<=n;i++)
+    b[i]=max(b[i-1],a[i]);
+ c[n]=a[n];
+ for(int i=n;i>=1;i--)
+    c[i]=max(c[i+1],a[i]);
+ for(int i=1;i<=n;i++)
+    s=max(s,b[i]-a[i]+c[i+1]);
+ cout<<s;
+
+}
